@@ -6,7 +6,7 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/25 14:32:34 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/05/01 13:15:04 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/05/02 13:44:54 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
-# include "AForm.hpp"
+# include "Form.hpp"
 
-class RobotomyRequestForm : public AForm {
+class RobotomyRequestForm : public Form {
 	private:
 		std::string	_target;
 		RobotomyRequestForm(void);
@@ -25,7 +25,8 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm(RobotomyRequestForm const & src);
 		virtual ~RobotomyRequestForm(void);
 		RobotomyRequestForm & operator=(RobotomyRequestForm const & src);
-		void Robotomize(void);
+		void Robotomize(void) const;
+		void execute(Bureaucrat const & executor) const;
 };
 
 #endif

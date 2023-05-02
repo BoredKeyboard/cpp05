@@ -6,7 +6,7 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/20 15:01:12 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/04/25 14:03:51 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/05/02 13:44:54 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 # include <iostream>
 
-class AForm;
+class Form;
 
 class Bureaucrat {
 	private:
@@ -32,7 +32,8 @@ class Bureaucrat {
 		int getGrade(void) const;
 		void incrGrade(int amount);
 		void decrGrade(int amount);
-		void signForm(AForm & form);
+		void signForm(Form & form);
+		void executeForm(Form const & form);
 		class GradeTooHighException : public std::exception {
 			public:
 				const char * what() const throw();

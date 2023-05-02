@@ -6,7 +6,7 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/25 13:58:45 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/05/01 12:30:12 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/05/02 13:44:54 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include <fstream>
-# include "AForm.hpp"
+# include "Form.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class ShrubberyCreationForm : public Form {
 	private:
 		std::string	_target;
 		ShrubberyCreationForm(void);
@@ -26,7 +26,13 @@ class ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm(ShrubberyCreationForm const & src);
 		virtual ~ShrubberyCreationForm(void);
 		ShrubberyCreationForm & operator=(ShrubberyCreationForm const & src);
-		void treeCreate(void);
+		void treeCreate(void) const;
+		void execute(Bureaucrat const & executor) const;
+
+		class FileNoPerm : public std::exception {
+			public:
+				const char * what() const throw();
+		};
 };
 
 #endif
