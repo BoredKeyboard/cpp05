@@ -6,7 +6,7 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/20 18:06:21 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/05/03 14:29:52 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/05/03 14:48:15 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,35 +27,35 @@ void leakfunc(void) {
 
 int	main(void) {
 	atexit(leakfunc);
-	// {
-	// 	Intern someRandomIntern;
-	// 	Form* rrf;
-	// 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	{
+		Intern someRandomIntern;
+		Form* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-	// 	Bureaucrat	b("Ang", 47);
-	// 	b.executeForm(*rrf);
-	// 	b.signForm(*rrf);
-	// 	b.executeForm(*rrf);
-	// 	b.incrGrade(2);
-	// 	b.executeForm(*rrf);
-	// 	delete rrf;
-	// }
-	// std::cout << std::endl;
-	// std::cout << std::endl;
-	// {
-	// 	PresidentialPardonForm	f("Esker");
-	// 	Bureaucrat	b("Feldspar", 26);
+		Bureaucrat	b("Ang", 47);
+		b.executeForm(*rrf);
+		b.signForm(*rrf);
+		b.executeForm(*rrf);
+		b.incrGrade(2);
+		b.executeForm(*rrf);
+		delete rrf;
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
+	{
+		PresidentialPardonForm	f("Esker");
+		Bureaucrat	b("Feldspar", 26);
 
-	// 	b.signForm(f);
-	// 	b.incrGrade(1);
-	// 	b.signForm(f);
+		b.signForm(f);
+		b.incrGrade(1);
+		b.signForm(f);
 
-	// 	b.executeForm(f);
-	// 	b.incrGrade(20);
-	// 	b.executeForm(f);
-	// }
-	// std::cout << std::endl;
-	// std::cout << std::endl;
+		b.executeForm(f);
+		b.incrGrade(20);
+		b.executeForm(f);
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
 	{
 		Intern someRandomIntern;
 		Form* rrf;
