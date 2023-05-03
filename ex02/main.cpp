@@ -6,7 +6,7 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/20 18:06:21 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/05/02 13:44:54 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/05/03 14:17:05 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@
 // Robotomy	 : sign 72, exec 45
 // pardon	 : sign 25, exec 5
 
+void leakfunc(void) {
+	system("leaks -q crat");
+}
+
 int	main(void) {
+	atexit(leakfunc);
 	{
 		PresidentialPardonForm	f("Esker");
 		Bureaucrat	b("Feldspar", 26);

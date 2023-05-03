@@ -6,13 +6,18 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/20 18:06:21 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/04/25 12:02:05 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/05/03 14:17:44 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+void leakfunc(void) {
+	system("leaks -q crat");
+}
+
 int	main(void) {
+	atexit(leakfunc);
 	{
 		Bureaucrat	b1("Bob", 74);
 
